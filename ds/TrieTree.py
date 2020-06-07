@@ -44,7 +44,10 @@ class TrieTree:
                     is_find = False
                     x += 1
                     break
-        
+        # checkが十分に密だったら，探索開始位置を変更
+        if sum(self.check[self.l:x+1]) / (x+1-self.l) > 0.95:
+            self.l = x+1
+    
         # baseとcheckの更新処理
         self.base[s] = x
         for i, _, ki in next_node:
