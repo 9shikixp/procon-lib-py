@@ -30,7 +30,7 @@ class DisjointSet:
         return self.p[x]
 
     def getSize(self, x):
-        return self.size[ds.findSet(x)]
+        return self.size[self.findSet(x)]
 
 
 if __name__ == '__main__':
