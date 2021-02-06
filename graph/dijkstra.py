@@ -11,9 +11,10 @@ def dijkstra(s, VC):
     heapq.heappush(pq, (0, s))
 
     while len(pq) != 0:
-        u = heapq.heappop(pq)[1]
+        cost, u = heapq.heappop(pq)
         color[u] = BLACK
-
+        if d[u] < cost:
+            continue
         for v, c in VC[u]:
             if color[v] != BLACK:
                 if d[u] + c < d[v]:
